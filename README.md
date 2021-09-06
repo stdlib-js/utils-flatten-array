@@ -219,6 +219,12 @@ bool = ( arr[4][20][2] === val );
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   [`@stdlib/utils/flatten-object`][@stdlib/utils/flatten-object]: flatten an object.
+
 </section>
 
 <!-- /.related -->
@@ -281,6 +287,12 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/utils-flatten-array/main/LICENSE
 
 [@stdlib/utils/copy]: https://github.com/stdlib-js/utils-copy
+
+<!-- <related-links> -->
+
+[@stdlib/utils/flatten-object]: https://github.com/stdlib-js/utils-flatten-object
+
+<!-- </related-links> -->
 
 </section>
 
