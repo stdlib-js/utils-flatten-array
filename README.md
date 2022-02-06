@@ -18,7 +18,7 @@ limitations under the License.
 
 -->
 
-# Flatten Array
+# flattenArray
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
@@ -50,7 +50,7 @@ var flattenArray = require( '@stdlib/utils-flatten-array' );
 
 #### flattenArray( arr\[, options] )
 
-Flattens an `array`.
+Flattens an array.
 
 ```javascript
 var arr = [ 1, [2, [3, [4, [ 5 ], 6], 7], 8], 9 ];
@@ -62,7 +62,7 @@ var out = flattenArray( arr );
 The function accepts the following `options`:
 
 -   **depth**: maximum depth to flatten.
--   **copy**: `boolean` indicating whether to deep [copy][@stdlib/utils/copy] `array` elements. Default: `false`.
+-   **copy**: `boolean` indicating whether to deep [copy][@stdlib/utils/copy] array elements. Default: `false`.
 
 To flatten to a specified depth, set the `depth` option.
 
@@ -78,7 +78,7 @@ var bool = ( arr[1][1][1] === out[3] );
 // returns true
 ```
 
-To deep [copy][@stdlib/utils/copy] `array` elements, set the `copy` option to `true`.
+To deep [copy][@stdlib/utils/copy] array elements, set the `copy` option to `true`.
 
 ```javascript
 var arr = [ 1, [2, [3, [4, [ 5 ], 6], 7], 8], 9 ];
@@ -95,7 +95,7 @@ var bool = ( arr[1][1][1] === out[3] );
 
 #### flattenArray.factory( dims\[, options] )
 
-Returns a `function` optimized for flattening `arrays` having specified dimensions.
+Returns a `function` optimized for flattening arrays having specified dimensions.
 
 ```javascript
 var flatten = flattenArray.factory( [ 3, 3 ] );
@@ -121,9 +121,9 @@ out = flatten( arr );
 
 The function accepts the following `options`:
 
--   **copy**: `boolean` indicating whether to deep [copy][@stdlib/utils/copy] `array` elements. Default: `false`.
+-   **copy**: `boolean` indicating whether to deep [copy][@stdlib/utils/copy] array elements. Default: `false`.
 
-To deep [copy][@stdlib/utils/copy] `array` elements, set the `copy` option to `true`.
+To deep [copy][@stdlib/utils/copy] array elements, set the `copy` option to `true`.
 
 <!-- eslint-disable object-curly-newline -->
 
@@ -154,6 +154,7 @@ var bool = ( arr[1][1] === out[4] );
 ## Notes
 
 -   A flatten `function` returned by the factory method does **not** validate that input `arrays` actually have the specified dimensions.
+-   The `factory` method uses code evaluation, which may be problematic in browser contexts enforcing a strict [content security policy][mdn-csp] (CSP).
 
 </section>
 
@@ -170,50 +171,48 @@ var bool = ( arr[1][1] === out[4] );
 ```javascript
 var flattenArray = require( '@stdlib/utils-flatten-array' );
 
-var xStride;
-var yStride;
-var zStride;
-var bool;
-var tmp1;
-var tmp2;
-var arr;
-var val;
-var out;
-var N;
-var M;
-var L;
-var i;
-var j;
-var k;
+function tensor( N, M, L ) {
+    var tmp1;
+    var tmp2;
+    var out;
+    var i;
+    var j;
+    var k;
 
-N = 1000;
-M = 100;
-L = 10;
-
-// Create an NxMxL (3D) array...
-arr = new Array( N );
-for ( i = 0; i < N; i++ ) {
-    tmp1 = new Array( M );
-    for ( j = 0; j < M; j++ ) {
-        tmp2 = new Array( L );
-        for ( k = 0; k < L; k++ ) {
-            tmp2[ k ] = (M*L*i) + (j*L) + k + 1;
+    out = [];
+    for ( i = 0; i < N; i++ ) {
+        tmp1 = [];
+        for ( j = 0; j < M; j++ ) {
+            tmp2 = [];
+            for ( k = 0; k < L; k++ ) {
+                tmp2.push( (M*L*i) + (j*L) + k + 1 );
+            }
+            tmp1.push( tmp2 );
         }
-        tmp1[ j ] = tmp2;
+        out.push( tmp1 );
     }
-    arr[ i ] = tmp1;
+    return out;
 }
-// Create a flattened (strided) array:
-out = flattenArray( arr );
 
-// To access the arr[4][20][2] element...
-xStride = M * L;
-yStride = L;
-zStride = 1;
-val = out[ (4*xStride) + (20*yStride) + (2*zStride) ];
+// Define array dimensions:
+var N = 1000;
+var M = 100;
+var L = 10;
+
+// Create a 3-dimensional nested array:
+var data = tensor( N, M, L );
+
+// Create a flattened (strided) array from a 3-dimensional nested array:
+var arr = flattenArray( data );
+
+// To access the data[4][20][2] element...
+var xStride = M * L;
+var yStride = L;
+var zStride = 1;
+var v = arr[ (4*xStride) + (20*yStride) + (2*zStride) ];
 // returns 4203
 
-bool = ( arr[4][20][2] === val );
+var bool = ( data[4][20][2] === v );
 // returns true
 ```
 
@@ -261,7 +260,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -304,6 +303,8 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/utils-flatten-array/main/LICENSE
 
 [@stdlib/utils/copy]: https://github.com/stdlib-js/utils-copy
+
+[mdn-csp]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 
 <!-- <related-links> -->
 
