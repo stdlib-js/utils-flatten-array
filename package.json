@@ -1,0 +1,36 @@
+{
+  "name": "@stdlib/utils-flatten-array",
+  "version": "0.0.0",
+  "description": "Flatten an array.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/utils-flatten-array.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdutils",
+    "stdutil",
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "flatten",
+    "linearize",
+    "linear",
+    "reshape",
+    "flat",
+    "array",
+    "arr",
+    "nested"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
