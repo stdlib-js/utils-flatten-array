@@ -24,32 +24,30 @@ limitations under the License.
 
 > Flatten an array.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/utils-flatten-array
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-flattenArray = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@umd/bundle.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@umd/bundle.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.flattenArray;
-})();
-</script>
+var flattenArray = require( '@stdlib/utils-flatten-array' );
 ```
 
 #### flattenArray( arr\[, options] )
@@ -172,13 +170,8 @@ var bool = ( arr[1][1] === out[4] );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@umd/bundle.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var flattenArray = require( '@stdlib/utils-flatten-array' );
 
 function tensor( N, M, L ) {
     var tmp1;
@@ -223,11 +216,6 @@ var v = arr[ (4*xStride) + (20*yStride) + (2*zStride) ];
 
 var bool = ( data[4][20][2] === v );
 // returns true
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -313,16 +301,17 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [deno-url]: https://github.com/stdlib-js/utils-flatten-array/tree/deno
 [umd-url]: https://github.com/stdlib-js/utils-flatten-array/tree/umd
 [esm-url]: https://github.com/stdlib-js/utils-flatten-array/tree/esm
+[branches-url]: https://github.com/stdlib-js/utils-flatten-array/blob/main/branches.md
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/utils-flatten-array/main/LICENSE
 
-[@stdlib/utils/copy]: https://github.com/stdlib-js/utils-copy/tree/umd
+[@stdlib/utils/copy]: https://github.com/stdlib-js/utils-copy
 
 [mdn-csp]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 
 <!-- <related-links> -->
 
-[@stdlib/utils/flatten-object]: https://github.com/stdlib-js/utils-flatten-object/tree/umd
+[@stdlib/utils/flatten-object]: https://github.com/stdlib-js/utils-flatten-object
 
 <!-- </related-links> -->
 
