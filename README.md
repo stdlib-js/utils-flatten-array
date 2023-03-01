@@ -230,7 +230,7 @@ var bool = ( data[4][20][2] === v );
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/utils/flatten-object`][@stdlib/utils/flatten-object]</span><span class="delimiter">: </span><span class="description">flatten an object.</span>
+-   <span class="package-name">[`@stdlib/utils-flatten-object`][@stdlib/utils/flatten-object]</span><span class="delimiter">: </span><span class="description">flatten an object.</span>
 
 </section>
 
