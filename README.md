@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@esm/index.mjs';
+import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@v0.2.2-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@esm/index.mjs';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@v0.2.2-esm/index.mjs';
 ```
 
 #### flattenArray( arr\[, options] )
@@ -177,7 +177,7 @@ var bool = ( arr[1][1] === out[4] );
 <body>
 <script type="module">
 
-import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@esm/index.mjs';
+import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@v0.2.2-esm/index.mjs';
 
 function tensor( N, M, L ) {
     var tmp1;
