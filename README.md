@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@deno/mod.js';
+import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@v0.2.2-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@v0.2.2-deno/mod.js';
 ```
 
 #### flattenArray( arr\[, options] )
@@ -172,7 +172,7 @@ var bool = ( arr[1][1] === out[4] );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@deno/mod.js';
+import flattenArray from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-flatten-array@v0.2.2-deno/mod.js';
 
 function tensor( N, M, L ) {
     var tmp1;
